@@ -16,6 +16,9 @@ public class Client {
     private String document;
     private Instant birthDate;
 
+    @OneToOne(mappedBy = "client", cascade = CascadeType.ALL)
+    private Account account;
+
     public Client(){
     }
 
@@ -56,6 +59,14 @@ public class Client {
 
     public void setBirthDate(Instant birthDate) {
         this.birthDate = birthDate;
+    }
+
+    public Account getAccount() {
+        return account;
+    }
+
+    public void setAccount(Account account) {
+        this.account = account;
     }
 
     @Override

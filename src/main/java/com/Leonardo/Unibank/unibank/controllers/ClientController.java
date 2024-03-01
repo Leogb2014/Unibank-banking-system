@@ -19,7 +19,7 @@ public class ClientController {
     @PostMapping
     public ResponseEntity<Void> registerClient(@RequestBody Client client){
         service.RegisterClient(client);
-        return ResponseEntity.ok().build();
+        return ResponseEntity.status(201).build();
     }
 
     @GetMapping
@@ -43,7 +43,7 @@ public class ClientController {
     @DeleteMapping(value="/{id}")
     public ResponseEntity<Void> deleteById(@PathVariable Long id){
         service.deleteById(id);
-        return ResponseEntity.noContent().build();
+        return ResponseEntity.ok().build();
     }
 
 }
